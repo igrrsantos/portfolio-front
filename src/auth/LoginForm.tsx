@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import api from '../api/client';
 import { useAuthContext } from './AuthContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -78,6 +78,9 @@ export default function LoginForm() {
         >
           Entrar
         </button>
+        <p className="text-center mt-4">
+          Não tem conta? <Link to="/signup" className="text-blue-600">Cadastre-se</Link>
+        </p>
       </form>
     </div>
   );

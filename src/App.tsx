@@ -7,6 +7,7 @@ import LoadingSpinner from './components/LoadingSpinner'; // Crie este component
 import ProjectDetail from './pages/ProjectDetail';
 import Layout from './components/Layout';
 import EditProject from './pages/EditProject';
+import SignupForm from './auth/SignupForm';
 
 function App() {
   const { user, isLoading } = useAuthContext();
@@ -34,6 +35,7 @@ function App() {
         path="/projects/:id/edit"
         element={<Layout>{user ? <EditProject /> : <Navigate to="/login" replace />}</Layout>}
       />
+      <Route path="/signup" element={<SignupForm />} />
       <Route path="*" element={<Navigate to="/projects" />} />
     </Routes>
   );
