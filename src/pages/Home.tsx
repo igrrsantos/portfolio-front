@@ -16,7 +16,7 @@ type Project = {
   title: string;
   description: string;
   image_url?: string;
-  tech_tags?: string[];
+  tech_tags: string[];
 };
 
 export default function Home() {
