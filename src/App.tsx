@@ -8,6 +8,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Layout from './components/Layout';
 import EditProject from './pages/EditProject';
 import SignupForm from './auth/SignupForm';
+import Home from './pages/Home';
 
 function App() {
   const { user, isLoading } = useAuthContext();
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginForm />} />
       <Route
         path="/projects"
