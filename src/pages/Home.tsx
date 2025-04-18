@@ -23,7 +23,7 @@ export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    api.get('/api/projects')
+    api.get('/api/public/projects')
       .then(res => setProjects(res.data))
       .catch(err => console.error('Erro ao carregar projetos', err));
   }, []);
