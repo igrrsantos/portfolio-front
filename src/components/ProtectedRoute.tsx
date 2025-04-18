@@ -2,9 +2,9 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useAuthContext } from '../auth/AuthContext';
 
 export default function ProtectedRoute() {
-  const { user, loading } = useAuthContext();
+  const { user, isLoading } = useAuthContext();
 
-  if (loading) {
+  if (isLoading) {
     return <div>Carregando...</div>; // Ou um spinner
   }
 
