@@ -23,7 +23,7 @@ export default function SignupForm() {
     e.preventDefault();
 
     try {
-      const response = await api.post('/signup', form);
+      const response = await api.post('/api/signup', form);
       const { token, user } = response.data;
 
       setAuth(user, token);
