@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import api from '../api/client';
-import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 
 type Project = {
@@ -32,7 +31,6 @@ export default function Projects() {
 
   return (
     <>
-      <Header />
       <main className="max-w-6xl mx-auto p-4">
         <h2 className="text-2xl font-bold mb-6">Meus Projetos</h2>
         {loading ? (

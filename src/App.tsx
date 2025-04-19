@@ -19,8 +19,12 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<LoginForm />} />
+      <Route path="/"
+        element={<Layout>{<Home />}</Layout>}
+      />
+      <Route path="/login"
+        element={<Layout>{!user ? <LoginForm /> : <Navigate to="/" replace />}</Layout>}
+      />
       <Route
         path="/projects"
         element={<Layout>{user ? <Projects /> : <Navigate to="/login" replace />}</Layout>}

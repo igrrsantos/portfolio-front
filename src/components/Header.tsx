@@ -10,26 +10,25 @@ export default function Header() {
     navigate('/login');
   };
 
-  if (!user) return null;
-
   return (
-    <header className="bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
-      <nav className="flex items-center gap-6">
-        <Link to="/projects" className="text-lg font-semibold text-gray-800 hover:text-blue-600">
-          Projetos
+    <header className="bg-white shadow sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link to="/" className="text-xl font-bold text-indigo-700">
+          Portfólio
         </Link>
-        <Link to="/projects/new" className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
-          + Novo Projeto
-        </Link>
-      </nav>
-      <div className="flex items-center gap-4">
-        <span className="text-sm text-gray-500">{user.email}</span>
-        <button
-          onClick={handleLogout}
-          className="text-sm text-gray-500 hover:text-red-600"
-        >
-          Sair
-        </button>
+
+        <nav className="flex gap-4 items-center text-sm font-medium text-gray-700">
+          <Link to="/" className="hover:text-indigo-600">Início</Link>
+          <Link to="/projects" className="hover:text-indigo-600">Projetos</Link>
+          {user ? (
+            <>
+              <Link to="/projects/new" className="hover:text-indigo-600">Novo Projeto</Link>
+              <button onClick={handleLogout} className="hover:text-red-600">Sair</button>
+            </>
+          ) : (
+            <Link to="/login" className="hover:text-indigo-600">Entrar</Link>
+          )}
+        </nav>
       </div>
     </header>
   );
