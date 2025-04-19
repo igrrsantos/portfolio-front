@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import api from '../api/client';
-import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 
 type TechTag = {
@@ -72,7 +71,6 @@ export default function NewProject() {
 
   return (
     <>
-      <Header />
       <main className="max-w-2xl mx-auto p-6">
         <h2 className="text-2xl font-bold mb-6">Novo Projeto</h2>
 
