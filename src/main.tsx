@@ -5,6 +5,7 @@ import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import { ProjectsProvider } from './projects/ProjectsContext';
+import 'keen-slider/keen-slider.min.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,7 +1,6 @@
 import { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../api/client';
-import Header from '../components/Header';
 
 type TechTag = {
   id: number;
@@ -84,7 +83,6 @@ export default function EditProject() {
 
   return (
     <>
-      <Header />
       <main className="max-w-2xl mx-auto p-6">
         <h2 className="text-2xl font-bold mb-6">Editar Projeto</h2>
 

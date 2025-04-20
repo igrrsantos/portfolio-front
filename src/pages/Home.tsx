@@ -10,6 +10,8 @@ import {
 } from 'react-icons/si';
 import { useEffect, useState } from 'react';
 import api from '../api/client';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 type Project = {
   id: number;
@@ -20,6 +22,21 @@ type Project = {
 };
 
 export default function Home() {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 16,
+    },
+    breakpoints: {
+      '(min-width: 640px)': {
+        slides: { perView: 2, spacing: 16 },
+      },
+      '(min-width: 1024px)': {
+        slides: { perView: 3, spacing: 24 },
+      },
+    },
+  });
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
@@ -56,12 +73,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold">Projetos em Destaque</h2>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div ref={sliderRef} className="keen-slider">
           {projects.map((project) => (
             <Link
               key={project.id}
               to={`/projects/${project.id}`}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4"
+              className="keen-slider__slide bg-white rounded-lg shadow-md hover:shadow-xl transition p-4"
             >
               {project.image_url && (
                 <img
@@ -114,19 +131,6 @@ export default function Home() {
           </span>
         </div>
       </section>
-
-      {/* CALL TO ACTION */}
-      <section className="bg-indigo-700 text-white py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Vamos trabalhar juntos?</h2>
-        <p className="mb-6">Entre em contato comigo para desenvolver algo incrível.</p>
-        <a
-          href="mailto:seu@email.com"
-          className="bg-white text-indigo-700 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition"
-        >
-          Entrar em contato
-        </a>
-      </section>
-
     </div>
   );
 }

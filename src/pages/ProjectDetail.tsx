@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api/client';
-import Header from '../components/Header';
 
 type Project = {
   id: number;
@@ -40,7 +39,6 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <Header />
       <main className="max-w-3xl mx-auto p-6">
         {project.image_url && (
           <img
