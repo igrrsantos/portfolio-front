@@ -1,5 +1,4 @@
 // src/pages/Home.tsx
-import { Link } from 'react-router-dom';
 import {
   SiRubyonrails,
   SiReact,
@@ -60,7 +59,7 @@ export default function Home() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [slider, projects]);
+  }, [sliderRef, projects]); // usar sliderRef como dependência força atualização após renderização
 
   return (
     <div className="text-gray-800">
@@ -71,12 +70,6 @@ export default function Home() {
         <p className="text-xl md:text-2xl max-w-xl mx-auto">
           Desenvolvimento de APIs modernas com Ruby on Rails e front-end em React.
         </p>
-        <Link
-          to="/projects"
-          className="mt-8 inline-block bg-white text-indigo-700 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition"
-        >
-          Ver Projetos
-        </Link>
       </section>
 
       {/* SOBRE */}
