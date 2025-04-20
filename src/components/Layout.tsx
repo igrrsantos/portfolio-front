@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </p>
           <div className="flex justify-center gap-6 text-3xl">
             <a
-              href="https://github.com/seu-usuario"
+              href="https://github.com/igrrsantos"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-indigo-300 transition"
@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/seu-usuario/"
+              href="https://www.linkedin.com/in/igrrsantos/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-indigo-300 transition"
@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <FaLinkedin />
             </a>
             <a
-              href="mailto:seu@email.com"
+              href="mailto:igrrsantos@gmail.com"
               className="text-white hover:text-indigo-300 transition"
               aria-label="Email"
             >
